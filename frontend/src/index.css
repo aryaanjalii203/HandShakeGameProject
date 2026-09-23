@@ -1,0 +1,106 @@
+@import "tailwindcss";
+
+@layer base {
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    background-color: #0b0f19;
+    color: #f8fafc;
+    font-family: 'Rajdhani', -apple-system, BlinkMacSystemFont, sans-serif;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, .font-heading {
+    font-family: 'Orbitron', -apple-system, sans-serif;
+    letter-spacing: 0.04em;
+  }
+}
+
+/* Poki-Style Vibrant Game Tiles */
+.poki-tile {
+  background: #131b2e;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 18px;
+  overflow: hidden;
+  transition: all 0.25s cubic-bezier(0.17, 0.67, 0.83, 0.67);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  position: relative;
+}
+
+.poki-tile:hover {
+  transform: translateY(-5px) scale(1.02);
+  border-color: rgba(6, 182, 212, 0.5);
+  box-shadow: 0 12px 30px rgba(6, 182, 212, 0.25);
+}
+
+/* Poki-Style Big Game Theater Frame */
+.poki-theater {
+  background: #0f172a;
+  border: 2px solid rgba(59, 130, 246, 0.3);
+  border-radius: 24px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7), 0 0 30px rgba(59, 130, 246, 0.15);
+  overflow: hidden;
+}
+
+/* Buttons */
+.btn-poki-play {
+  background: linear-gradient(135deg, #06b6d4 0%, #3b82f6 100%);
+  color: #ffffff;
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 800;
+  padding: 12px 28px;
+  border-radius: 14px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 6px 20px rgba(6, 182, 212, 0.4);
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.btn-poki-play:hover {
+  transform: scale(1.04);
+  box-shadow: 0 8px 30px rgba(6, 182, 212, 0.7);
+  filter: brightness(1.1);
+}
+
+.btn-poki-secondary {
+  background: #1e293b;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #e2e8f0;
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 700;
+  padding: 12px 24px;
+  border-radius: 14px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.btn-poki-secondary:hover {
+  background: #334155;
+  border-color: rgba(255, 255, 255, 0.3);
+  transform: scale(1.02);
+}
+
+/* Animations */
+@keyframes pulseGlow {
+  0%, 100% { box-shadow: 0 0 15px rgba(6, 182, 212, 0.3); }
+  50% { box-shadow: 0 0 35px rgba(6, 182, 212, 0.8); }
+}
+
+.pulse-poki {
+  animation: pulseGlow 2.5s infinite ease-in-out;
+}
