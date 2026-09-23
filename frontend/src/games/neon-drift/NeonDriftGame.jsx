@@ -12,6 +12,7 @@ export function NeonDriftGame({ isSolo = false, onExit }) {
 
   const [soloState, setSoloState] = useState(null);
   const soloLoopRef = useRef(null);
+  const inputsRef = useRef({ forward: false, reverse: false, left: false, right: false });
 
   const isOnline = !isSolo && activeRoom;
   const currentState = isOnline ? gameState : soloState;
@@ -130,8 +131,6 @@ export function NeonDriftGame({ isSolo = false, onExit }) {
             }
           }
         }
-
-  const inputsRef = useRef({ forward: false, reverse: false, left: false, right: false });
 
         // Update Local Player Car
         const p = next.cars['local-player'];

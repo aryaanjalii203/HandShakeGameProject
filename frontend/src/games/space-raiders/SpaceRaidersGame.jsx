@@ -12,6 +12,7 @@ export function SpaceRaidersGame({ isSolo = false, onExit }) {
 
   const [soloState, setSoloState] = useState(null);
   const soloLoopRef = useRef(null);
+  const keysRef = useRef({ left: false, right: false });
 
   const isOnline = !isSolo && activeRoom;
   const currentState = isOnline ? gameState : soloState;
@@ -134,8 +135,6 @@ export function SpaceRaidersGame({ isSolo = false, onExit }) {
           confetti({ particleCount: 100, spread: 70, origin: { y: 0.6 } });
           recordMatchResult('space-raiders', true, next.players['local-player'].score);
         }
-
-  const keysRef = useRef({ left: false, right: false });
 
         // Continuous Player Ship Movement at 60 FPS
         const p = next.players['local-player'];

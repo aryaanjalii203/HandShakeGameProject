@@ -12,6 +12,7 @@ export function BattleGridGame({ isSolo = false, onExit }) {
 
   const [soloState, setSoloState] = useState(null);
   const soloLoopRef = useRef(null);
+  const keysRef = useRef({ up: false, down: false, left: false, right: false });
 
   const isOnline = !isSolo && activeRoom;
   const currentState = isOnline ? gameState : soloState;
@@ -157,8 +158,6 @@ export function BattleGridGame({ isSolo = false, onExit }) {
 
           if (exp.timer <= 0) next.explosions.splice(i, 1);
         }
-
-  const keysRef = useRef({ up: false, down: false, left: false, right: false });
 
         // Update Local Player movement at 60 FPS
         const p = next.players['local-player'];

@@ -12,6 +12,7 @@ export function ColorClashGame({ isSolo = false, onExit }) {
 
   const [soloState, setSoloState] = useState(null);
   const soloLoopRef = useRef(null);
+  const keysRef = useRef({ up: false, down: false, left: false, right: false });
 
   const isOnline = !isSolo && activeRoom;
   const currentState = isOnline ? gameState : soloState;
@@ -136,8 +137,6 @@ export function ColorClashGame({ isSolo = false, onExit }) {
         }
         if (next.players['local-player']) next.players['local-player'].tileCount = c0;
         if (next.players['ai-bot']) next.players['ai-bot'].tileCount = c1;
-
-  const keysRef = useRef({ up: false, down: false, left: false, right: false });
 
         // Continuous Player Movement & Tile Painting at 60 FPS
         const p = next.players['local-player'];
